@@ -20,6 +20,7 @@ public:
 	void tab_report();					//function to show data in tabular format
 	int return_acc_number() const;		//function to return account number
 	int return_balance() const;			//function to return accounts balance
+	char return_type() const;			//function to return type of account
 	void close_account();
 
 
@@ -107,6 +108,20 @@ int account::return_acc_number() const{
 int account::return_balance() const {
 	return deposit;
 }
+
+char account::return_type() const {
+	return type_of_account;
+}
+
+//below this line is the function declaration
+
+void write_account(); 				//function to write data to the binary file
+void show_acc_details(int); 		//function to show account details
+void modify_acc(int); 				//function to modify account details in the binary file
+void delete_acc(int); 				//function to delete account records from the binary file
+void display_all(); 				//function to display all the account records from the binary file
+void deposit_withdraw(int, int); 	//function to deposit or withdraw money from the account
+void intro(); 						//function to display the intro screen
 
 int main() {
 
