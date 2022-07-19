@@ -105,7 +105,7 @@ int account::return_acc_number() const{
 }
 
 int account::return_balance() const {
-	return 
+	return deposit;
 }
 
 int main() {
