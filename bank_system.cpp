@@ -161,7 +161,38 @@ int main() {
 			cin >> num;
 			show_acc_details(num);
 			break;
+		case '5':
+			display_all();
+			break;
+		case '6':
+			cout << "\n Enter the account number: ";
+			cin >> num;
+			delete_acc(num);
+			break;
+		case '7':
+			cout << "\n Enter the account number: ";
+			cin >> num;
+			modify_acc(num);
+			break;
+		case '8':
+			cout << "\n\n\t Thank you for using our bank services.";
+			break;
+		default:
+			cout << "\a";
 		}
-	}
+		cin.ignore();
+		cin.get();
+	}while(ch != '8');
 	return 0;
+}
+
+//function to write in file
+
+void write_account() {
+	account acc;
+	ofstream outFile;
+	outFile.open("account.dat", ios::binary | ios::app);
+	acc.new_account();
+	outFile.write(reinterpret_cast<char *> (&acc), sizeof(account));
+	outFile.close();
 }
