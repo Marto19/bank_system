@@ -124,6 +124,28 @@ void deposit_withdraw(int, int); 	//function to deposit or withdraw money from t
 void intro(); 						//function to display the intro screen
 
 int main() {
+	char ch;
+	int num;
+	intro();
 
+	do{
+		system("cls");
+		cout << "\n\n\n\t MAIN MENU";
+		cout << "\n\n\t 1. Create a new account";
+		cout << "\n\n\t 2. Deposit from an existing account";
+		cout << "\n\n\t 3. Withdraw from an existing account";
+		cout << "\n\n\t 4. Balance enquiry";
+		cout << "\n\n\t 5. All account holder list";
+		cout << "\n\n\t 6. Close an account";
+		cout << "\n\n\t 7. Modify an existing account";
+		cout << "\n\n\t 8. Exit";
+		cout << "\n\n\t Enter your choice: ";
+
+		switch{
+		case '1':
+			new_account();
+			break;
+		}
+	}
 	return 0;
 }
