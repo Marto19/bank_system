@@ -196,3 +196,30 @@ void write_account() {
 	outFile.write(reinterpret_cast<char *> (&acc), sizeof(account));
 	outFile.close();
 }
+
+
+//function to read specific record from file
+
+
+void show_acc_details(int num) {
+	account acc;
+	bool flag = false;
+	ifstream inFile;
+	inFile.open("account.dat", ios::binary);
+	if (!inFile) {
+		cout << "\n File could not be open !! Press any key to exit. ";
+		cin.ignore();
+		cin.get();
+		exit(1);
+	}
+	while (inFile.read(reinterpret_cast<char *> (&acc), sizeof(account))) {
+		if (acc.return_acc_number() == num) {
+			acc.show_account();
+			flag = true;
+		}
+	}
+	inFile.close();
+	if (flag == false) {
+		cout << "\n No record found/Account number does not exist";
+	}
+}
