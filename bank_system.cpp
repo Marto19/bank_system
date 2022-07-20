@@ -140,10 +140,26 @@ int main() {
 		cout << "\n\n\t 7. Modify an existing account";
 		cout << "\n\n\t 8. Exit";
 		cout << "\n\n\t Enter your choice: ";
+		cin >> ch;
 
-		switch{
+		switch(ch){
 		case '1':
-			new_account();
+			write_account();
+			break;
+		case '2':
+			cout << "\n Enter the account number: ";
+			cin >> num;
+			deposit_withdraw(num, 1);
+			break;
+		case '3':
+			cout << "\n Enter the account number: ";
+			cin >> num;
+			deposit_withdraw(num, 2);
+			break;
+		case '4':
+			cout << "\n Enter the account number: ";
+			cin >> num;
+			show_acc_details(num);
 			break;
 		}
 	}
