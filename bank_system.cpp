@@ -21,17 +21,17 @@ public:
 	int return_acc_number() const;		//function to return account number
 	int return_balance() const;			//function to return accounts balance
 	char return_type() const;			//function to return type of account
-	void close_account();
+	void close_account();				//function to close account
 
-
-	account(int Account_number, char Persons_name, unsigned int Deposit, unsigned int Withdraw_amount,
+	account(){}						//default constructor
+	/*account(int Account_number, char Persons_name, unsigned int Deposit, unsigned int Withdraw_amount,
 		char Type_of_account) {
 		account_number = Account_number;
 		persons_name[50] = Persons_name;
 		deposit = Deposit;
 		Withdraw_amount = withdraw_am;
 		type_of_account = Type_of_account;
-	}
+	}*/
 };
 
 void account::new_account() {
