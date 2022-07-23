@@ -197,9 +197,7 @@ void write_account() {
 	outFile.close();
 }
 
-
 //function to read specific record from file
-
 
 void show_acc_details(int num) {
 	account acc;
@@ -208,9 +206,7 @@ void show_acc_details(int num) {
 	inFile.open("account.dat", ios::binary);
 	if (!inFile) {
 		cout << "\n File could not be open !! Press any key to exit. ";
-		cin.ignore();
-		cin.get();
-		exit(1);
+		return;
 	}
 	while (inFile.read(reinterpret_cast<char *> (&acc), sizeof(account))) {
 		if (acc.return_acc_number() == num) {
@@ -222,4 +218,11 @@ void show_acc_details(int num) {
 	if (flag == false) {
 		cout << "\n No record found/Account number does not exist";
 	}
+}
+
+void modify_acc(int n){
+	bool found = false;
+	account acc;
+	fstream File;
+	File.open("account.dat", ios::binary | ios::in | ios::out);
 }
