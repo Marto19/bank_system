@@ -231,5 +231,19 @@ void modify_acc(int n){
 	}
 	while(!File.eof() && found == false ){
 		File.read(reinterpret_cast<char *> (&acc), sizeof(account));
+		if(acc.return_acc_number() == n){
+			ac.show_account();
+			cout << "\n\n\t Do you want to modify this record(y/n)?";
+			ac.modify();
+			int pos = (-1)*static_cast<int>(sizeof(account));
+			File.seekp(pos, ios::cur);
+			File.write(reinterpet_cast<char*> (&acc), sizeof(account));
+			cout << "\n\n\t Record Updated";
+			found = true;
+		}
+	}
+	File.close();
+	if(found == false){
+		cout << "\n\n Record not found ";
 	}
 }
