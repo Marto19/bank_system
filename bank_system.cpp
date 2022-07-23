@@ -10,7 +10,7 @@ private:
 	char persons_name[50];
 	char type_of_account;
 	unsigned int deposit;
-	unsigned int withdraw_amount;
+	unsigned int withdraw_am;
 public:
 	void new_account();					//funtcion that will creates a new account, takes data from the user
 	void show_account()const;			//function that shows the account details
@@ -29,7 +29,7 @@ public:
 		account_number = Account_number;
 		persons_name[50] = Persons_name;
 		deposit = Deposit;
-		Withdraw_amount = withdraw_amount;
+		Withdraw_amount = withdraw_am;
 		type_of_account = Type_of_account;
 	}
 };
