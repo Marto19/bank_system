@@ -225,4 +225,11 @@ void modify_acc(int n){
 	account acc;
 	fstream File;
 	File.open("account.dat", ios::binary | ios::in | ios::out);
+	if(!File){
+		cout << "File could not be open !! Press any key to exit...";
+		return;
+	}
+	while(!File.eof() && found == false ){
+		File.read(reinterpret_cast<char *> (&acc), sizeof(account));
+	}
 }
