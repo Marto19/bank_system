@@ -247,3 +247,18 @@ void modify_acc(int n){
 		cout << "\n\n Record not found ";
 	}
 }
+
+//function to delete record from file
+
+void delete_acc(int n){
+	account acc;
+	ifstream inFile;
+	ofstream outFile;
+	inFile.open("accountq.dat", ios::binary);
+	outFile.open("temp.dat", ios::binary);
+	if(!inFile){
+		cout << "File could not be open !! Press any key to exit...";
+		return;
+	}
+	outFile.open("temp.dat", ios::binary);
+}
