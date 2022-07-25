@@ -261,4 +261,15 @@ void delete_acc(int n){
 		return;
 	}
 	outFile.open("temp.dat", ios::binary);
+	inFile.seekg(0, ios::beg);
+	while(inFile.read(reinterpret_cast<char *> (&acc), sizeof(account))){
+		if(acc.return_acc_number() != n){
+			outFile.write(reinterpret_cast<char *> (&acc), sizeof(account));
+		}
+	}
+	inFile.close();
+	outFile.close();
+	remove("account.dat");
+	rename("temp.dat", "account.dat");
+	cout << "\n\n\tRecord Deleted...";
 }
