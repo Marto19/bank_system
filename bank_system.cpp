@@ -294,3 +294,8 @@ void display_all(){
 	inFile.close();
 }
 
+//function to deposit or withdraw amount from account
+
+void deposit_amount(int n, int option){
+	
+}
