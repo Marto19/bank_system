@@ -273,3 +273,14 @@ void delete_acc(int n){
 	rename("temp.dat", "account.dat");
 	cout << "\n\n\tRecord Deleted...";
 }
+
+void display_all(){
+	account acc;
+	ifstream inFile;
+	inFile.open("account.dat" , ios::binary);
+	if(!inFile){
+		cout << "File could not be open !! Press any key to exit...";
+		return;
+	}
+	cout << 
+}
