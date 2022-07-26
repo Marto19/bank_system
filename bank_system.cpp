@@ -282,5 +282,11 @@ void display_all(){
 		cout << "File could not be open !! Press any key to exit...";
 		return;
 	}
-	cout << 
+	cout << "\n\n\t\tACCOUNT HOLDER LIST\n\n";
+	cout << "====================================================\n";
+	cout << "Account Number		Name	 Balance\n\n";
+	cout << "====================================================\n";
+	while(inFile.read(reinterpret_cast<char *> (&acc), sizeof(account))){
+		acc.show_account();
+	}
 }
