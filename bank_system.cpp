@@ -274,6 +274,8 @@ void delete_acc(int n){
 	cout << "\n\n\tRecord Deleted...";
 }
 
+//function to display all account deposit list
+
 void display_all(){
 	account acc;
 	ifstream inFile;
@@ -289,4 +291,6 @@ void display_all(){
 	while(inFile.read(reinterpret_cast<char *> (&acc), sizeof(account))){
 		acc.show_account();
 	}
+	inFile.close();
 }
+
