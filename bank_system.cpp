@@ -42,7 +42,7 @@ void account::new_account() {
 	cin.ignore();
 	cin.getline(persons_name, 50);
 
-	cout << "\n Enter type of account: ";
+	cout << "\n Enter type of account(C-for Current / S-for Saving): ";
 	cin >> type_of_account;
 	type_of_account = toupper(type_of_account);
 
@@ -333,7 +333,7 @@ void deposit_withdraw(int n, int option){
 
 void intro(){
 	cout << "\n\n\n\t BANK";
-	cout << "\n\n\tMANAGEMENT";
+	cout << "\n\tMANAGEMENT";
 	cout << "\n\n\tSYSTEM";
 	cout << "\n\n\n\nMADE BY: MARTIN TRENKOV";
 	cout << "\n\nUNIVERSITY: NEW BULGARIAN UNIVERSITY";
