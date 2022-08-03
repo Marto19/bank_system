@@ -313,12 +313,12 @@ void deposit_withdraw(int n, int option){
 			if(option == 1){
 				cout << "\n\n\t How much do you want to deposit?";
 				cin >> amount;
-				acc.deposit(amount);
+				acc.deposit_amount(amount);
 			}
 			else{
 				cout << "\n\n\t How much do you want to withdraw?";
 				cin >> amount;
-				acc.withdraw(amount);
+				acc.withdraw_amount(amount);
 			}
 		}
 	}
