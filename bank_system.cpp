@@ -237,7 +237,7 @@ void modify_acc(int n){
 			acc.modify_account();
 			int pos = (-1)*static_cast<int>(sizeof(account));
 			File.seekp(pos, ios::cur);
-			File.write(reinterpet_cast<char*> (&acc), sizeof(account));
+			File.write(reinterpret_cast<char *> (&acc), sizeof(account));
 			cout << "\n\n\t Record Updated";
 			found = true;
 		}
