@@ -322,4 +322,8 @@ void deposit_withdraw(int n, int option){
 			}
 		}
 	}
+	File.close();
+	if(found == false){
+		cout << "\n\n Record not found ";
+	}
 }
