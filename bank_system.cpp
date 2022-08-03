@@ -38,30 +38,49 @@ void account::new_account() {
 	cout << "\n Enter the account number(for example 108): ";
 	cin >> account_number;
 
-	cout << "\n Enter your name(for example MARTIN): ";
+	cout << "\n Enter your name(for example Martin/MARTIN): ";
 	cin.ignore();
 	cin.getline(persons_name, 50);
 
 	cout << "\n Enter type of account(C-for Current / S-for Saving): ";
 	cin >> type_of_account;
 	type_of_account = toupper(type_of_account);
-
-	cout << "\n Enter the initial amount (100$ or more for Saving and 200$ or more for Current)";
-	cin >> deposit;
-	if (deposit >= 100 && deposit <= 199) {
-		cout << "Account created successfully. Deposit for savings account." << endl;
-	}
-	else if (deposit < 100) {
-		cout << "\n Please enter valid amount(must be atleast 100$)" << endl;
-		while (deposit < 100) {
-			cout << "Enter again: ";
-			cin >> deposit;
-			cout << endl;
+	if(toupper(type_of_account == 'S')){
+	    cout << "\n Enter the initial amount. 100$ or more for Savings account: ";
+	    cin >> deposit;
+	
+	    if (deposit >= 100) {
+		    cout << "Account created successfully. Deposit for savings account." << endl;
+	    }
+	    else if (deposit < 100) {
+		    cout << "\n Please enter valid amount(must be atleast 100$)" << endl;
+		    while (deposit < 100) {
+			    cout << "\n Enter again: ";
+			    cin >> deposit;
+			    cout << endl;
 		}
-		cout << "\nAccount created successfully." << endl;
+		cout << "\nAccount created successfully. Click ENTER to proceed" << endl;
+	    }
+	}
+	else if(toupper(type_of_account == 'C')){
+	    cout << "\n Enter the initial amount. 200$ or more for Current account: ";
+	    cin >> deposit;
+	
+	    if (deposit >= 200) {
+		    cout << "Account created successfully. Deposit for savings account." << endl;
+	    }
+	    else if (deposit < 200) {
+		    cout << "\n Please enter valid amount(must be atleast 200$)" << endl;
+		    while (deposit < 200) {
+			    cout << "\n Enter again: ";
+			    cin >> deposit;
+			    cout << endl;
+		}
+		cout << "\nAccount created successfully. Click ENTER to proceed" << endl;
+	    }
 	}
 	else {
-		cout << "\nAccount created successfully." << endl;
+		cout << "\nAccount created successfully. Click ENTER to proceed" << endl;
 	}
 }
 
@@ -133,7 +152,7 @@ int main() {
 		system("cls");
 		cout << "\n\n\n\t MAIN MENU";
 		cout << "\n\n\t 1. Create a new account";
-		cout << "\n\n\t 2. Deposit from an existing account";
+		cout << "\n\n\t 2. Deposit to an existing account";
 		cout << "\n\n\t 3. Withdraw from an existing account";
 		cout << "\n\n\t 4. Balance enquiry";
 		cout << "\n\n\t 5. All account holder list";
