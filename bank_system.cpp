@@ -35,7 +35,7 @@ public:
 };
 
 void account::new_account() {
-	cout << "\n Enter the account number: ";
+	cout << "\n Enter the account number(for example 108): ";
 	cin >> account_number;
 
 	cout << "\n Enter your name(for example MARTIN): ";
@@ -140,7 +140,7 @@ int main() {
 		cout << "\n\n\t 6. Close an account";
 		cout << "\n\n\t 7. Modify an existing account";
 		cout << "\n\n\t 8. Exit";
-		cout << "\n\n\t Enter your choice: ";
+		cout << "\n\n\t Enter your choice(by number): ";
 		cin >> ch;
 
 		switch(ch){
@@ -148,7 +148,7 @@ int main() {
 			write_account();
 			break;
 		case '2':
-			cout << "\n Enter the account number(for example 108): ";
+			cout << "\n Enter the account number: ";
 			cin >> num;
 			deposit_withdraw(num, 1);
 			break;
