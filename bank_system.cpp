@@ -327,3 +327,14 @@ void deposit_withdraw(int n, int option){
 		cout << "\n\n Record not found ";
 	}
 }
+
+
+//intro function
+
+void intro(){
+	cout << "\n\n\n\t BANK";
+	cout << "\n\n\tMANAGEMENT";
+	cout << "\n\n\tSYSTEM";
+	cout << "\n\n\n\nMADE BY: MARTIN TRENKOV";
+	cout << "\n\nUNIVERSITY: NEW BULGARIAN UNIVERSITY";
+}
