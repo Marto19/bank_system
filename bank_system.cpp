@@ -38,7 +38,7 @@ void account::new_account() {
 	cout << "\n Enter the account number: ";
 	cin >> account_number;
 
-	cout << "\n Enter your name: ";
+	cout << "\n Enter your name(for example MARTIN): ";
 	cin.ignore();
 	cin.getline(persons_name, 50);
 
@@ -52,15 +52,16 @@ void account::new_account() {
 		cout << "Account created successfully. Deposit for savings account." << endl;
 	}
 	else if (deposit < 100) {
-		cout << "Please enter valid amount(must be atleast 100$)" << endl;
+		cout << "\n Please enter valid amount(must be atleast 100$)" << endl;
 		while (deposit < 100) {
 			cout << "Enter again: ";
 			cin >> deposit;
 			cout << endl;
 		}
+		cout << "\nAccount created successfully." << endl;
 	}
 	else {
-		cout << "Account created successfully." << endl;
+		cout << "\nAccount created successfully." << endl;
 	}
 }
 
@@ -147,7 +148,7 @@ int main() {
 			write_account();
 			break;
 		case '2':
-			cout << "\n Enter the account number: ";
+			cout << "\n Enter the account number(for example 108): ";
 			cin >> num;
 			deposit_withdraw(num, 1);
 			break;
@@ -333,7 +334,7 @@ void deposit_withdraw(int n, int option){
 
 void intro(){
 	cout << "\n\n\n\t BANK";
-	cout << "\n\tMANAGEMENT";
+	cout << "\n\n\tMANAGEMENT";
 	cout << "\n\n\tSYSTEM";
 	cout << "\n\n\n\nMADE BY: MARTIN TRENKOV";
 	cout << "\n\nUNIVERSITY: NEW BULGARIAN UNIVERSITY";
