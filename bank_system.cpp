@@ -296,6 +296,30 @@ void display_all(){
 
 //function to deposit or withdraw amount from account
 
-void deposit_amount(int n, int option){
-	
+void deposit_withdraw(int n, int option){
+	int amount;
+	bool found = false;
+	account acc;
+	fstream File;
+	File.open("account.dat" , ios::binary | ios::in | ios::out);
+	if(!File){
+		cout << "File could not be open !! Press any key to exit...";
+		return;
+	}
+	while(!File.eof() && found == false){
+		File.read(reinterpret_cast<char *> (&acc), sizeof(account));
+		if(acc.return_acc_number() == n){
+			acc.show_account();
+			if(option == 1){
+				cout << "\n\n\t How much do you want to deposit?";
+				cin >> amount;
+				acc.deposit(amount);
+			}
+			else{
+				cout << "\n\n\t How much do you want to withdraw?";
+				cin >> amount;
+				acc.withdraw(amount);
+			}
+		}
+	}
 }
